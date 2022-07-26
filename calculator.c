@@ -18,6 +18,10 @@ int main(){
         case 1:
         new = x+y;
         break;
+            
+        case 2:
+        new = x-y;
+        break;
     }
     printf("Result is: %f", new);
 

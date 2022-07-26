@@ -22,6 +22,10 @@ int main(){
         case 2:
         new = x-y;
         break;
+            
+        case 3:
+        new = x*y;
+        break;
     }
     printf("Result is: %f", new);
 

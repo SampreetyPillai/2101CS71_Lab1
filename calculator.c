@@ -15,7 +15,7 @@ int main(){
 
     if (num==4 && y==0){
         printf("Cannot divide by 0");
-    }else{
+    }else if(num==1 ||num==2||num==3||num==4){
     
     float new;
     
@@ -31,12 +31,15 @@ int main(){
         case 3:
         new = x*y;
         break;
-        
+
         case 4:
         new = x/y;
         break;
+        
     }
     printf("Result is: %f", new);
+    }else{
+        printf("Invalid operator");
     }
     
 

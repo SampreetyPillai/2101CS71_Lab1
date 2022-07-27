@@ -40,6 +40,53 @@ void bubbleSort(int array[], int n){
             }
 }
 
+void merge(int array[], int l, int m, int r){
+
+    int i, j, t;
+    int n1 = m-l+1;
+    int n2 = r-m;
+    int newarr[n1], newarr2[n2];
+ 
+    for (i = 0; i < n1; i++)
+        newarr[i] = array[l+i];
+    for (j = 0; j < n2; j++)
+        newarr2[j] = array[m+1+j];
+    i = 0; 
+    j = 0; 
+    t = l;
+    while (i < n1 && j < n2) {
+        if (newarr[i] <= newarr2[j]) {
+            array[t] = newarr[i];
+            i++;
+        }
+        else {
+            array[t] = newarr2[j];
+            j++;
+        }
+        t++;
+    }
+    while (i < n1) {
+        array[t] = newarr[i];
+        i++;
+        t++;
+    }
+    while (j < n2) {
+        array[t] = newarr2[j];
+        j++;
+        t++;
+    }
+}
+
+void mergeSort(int array[], int l, int r)
+{
+    if (l < r) {
+        int m = l + (r - l) / 2;
+        mergeSort(array, l, m);
+        mergeSort(array, m + 1, r);
+        merge(array, l, m, r);
+    }
+}
+
 int main(){
 
     // number of elements
@@ -73,6 +120,10 @@ int main(){
 
         case 3:
         bubbleSort(myarr, num);
+        break;
+
+        case 4:
+        mergeSort(myarr, 0, sizeof(myarr)/sizeof(myarr[0]) - 1);
         break;
 
     }

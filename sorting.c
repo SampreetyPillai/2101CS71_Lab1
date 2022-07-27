@@ -1,5 +1,17 @@
 #include<stdio.h>
 
+void insertionSort(int array[], int n) 
+{ 
+    int i, element, j; 
+    for (i = 1; i < n; i++) { element = array[i]; j = i - 1; 
+    while (j >= 0 && array[j] > element) { 
+            array[j + 1] = array[j]; 
+            j = j - 1; 
+        } 
+        array[j + 1] = element; 
+    } 
+}
+
 int main(){
 
     // number of elements
@@ -21,6 +33,20 @@ int main(){
     int option;
     scanf("%d", &option);
 
+    switch(option){
+
+        case 1:
+        insertionSort(myarr, num);
+        break;
+        
+    }
+
+    //Print the array
+    int u=0;
+    while(u<num){
+        printf("%d ", myarr[u]);
+        u++;
+    }
 
     return 0;
 }

@@ -12,6 +12,23 @@ void insertionSort(int array[], int n)
     } 
 }
 
+
+void selectionSort(int array[], int n){
+    int i,j,posn,new;
+    for(i = 0; i < n - 1; i++){
+        posn=i;
+        for(j = i + 1; j < n; j++){
+            if(array[posn] > array[j])
+            posn=j;
+        }
+        if(posn != i){
+            new = array[i];
+            array[i] = array[posn];
+            array[posn] = new;
+}
+}
+}
+
 int main(){
 
     // number of elements
@@ -38,7 +55,11 @@ int main(){
         case 1:
         insertionSort(myarr, num);
         break;
-        
+
+        case 2:
+        selectionSort(myarr, num);
+        break;
+
     }
 
     //Print the array

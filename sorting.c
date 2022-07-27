@@ -1,5 +1,6 @@
 #include<stdio.h>
 
+//Function for Insertion Sort
 void insertionSort(int array[], int n) 
 { 
     int i, element, j; 
@@ -12,7 +13,7 @@ void insertionSort(int array[], int n)
     } 
 }
 
-
+//Function for Selection Sort
 void selectionSort(int array[], int n){
     int i,j,posn,new;
     for(i = 0; i < n - 1; i++){
@@ -29,6 +30,7 @@ void selectionSort(int array[], int n){
 }
 }
 
+//Function for BUbble Sort
 void bubbleSort(int array[], int n){
     int i, j;
     for (i = 0; i < n - 1; i++)
@@ -39,6 +41,7 @@ void bubbleSort(int array[], int n){
                 array[j+1]= temp;
             }
 }
+
 
 void merge(int array[], int l, int m, int r){
 
@@ -77,6 +80,7 @@ void merge(int array[], int l, int m, int r){
     }
 }
 
+//Function for Merge Sort
 void mergeSort(int array[], int l, int r)
 {
     if (l < r) {
@@ -87,6 +91,7 @@ void mergeSort(int array[], int l, int r)
     }
 }
 
+//Function for Quick Sort
 void quickSort(int array[],int first,int last){
     int i, j, point, temp;
     if(first<last){
@@ -133,6 +138,7 @@ int main(){
     int option;
     scanf("%d", &option);
     
+    //checking if options are valid
     if(option==1||option==2||option==3||option==4||option==5){
 
     switch(option){
@@ -163,10 +169,9 @@ int main(){
     while(u<num){
         printf("%d ", myarr[u]);
         u++;
-    
-
     }
     }else{
+        //error message
         printf("Invalid operator");
     }
 

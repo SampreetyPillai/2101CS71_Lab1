@@ -13,6 +13,7 @@ int main(){
     int num;
     scanf("%d", &num);
 
+    //Division by 0 is invalid
     if (num==4 && y==0){
         printf("Cannot divide by 0");
     }else if(num==1 ||num==2||num==3||num==4){
@@ -39,6 +40,8 @@ int main(){
     }
     printf("Result is: %f", new);
     }else{
+
+        //Print error message
         printf("Invalid operator");
     }
     

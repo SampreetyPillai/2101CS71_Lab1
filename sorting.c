@@ -87,6 +87,31 @@ void mergeSort(int array[], int l, int r)
     }
 }
 
+void quickSort(int array[],int first,int last){
+    int i, j, point, temp;
+    if(first<last){
+        point = first;
+        i = first;
+        j = last;
+        while(i<j){
+            while(array[i]<=array[point]&&i<last)
+            i++;
+            while(array[j]>array[point])
+            j--;
+            if(i<j){
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+        }
+        temp = array[point];
+        array[point] = array[j];
+        array[j] = temp;
+        quickSort(array,first,j-1);
+        quickSort(array,j+1,last);
+    }
+}
+
 int main(){
 
     // number of elements
@@ -107,6 +132,8 @@ int main(){
     printf("Which operation would you like to perform?\nInsertion Sort( press 1 )\nSelection Sort( press 2)\nBubble sort( press 3)\nMerge Sort( press 4)\nQuick Sort( press 5)\n");
     int option;
     scanf("%d", &option);
+    
+    if(option==1||option==2||option==3||option==4||option==5){
 
     switch(option){
 
@@ -126,6 +153,9 @@ int main(){
         mergeSort(myarr, 0, sizeof(myarr)/sizeof(myarr[0]) - 1);
         break;
 
+        case 5:
+        quickSort(myarr,0,num-1);
+        break;
     }
 
     //Print the array
@@ -133,7 +163,14 @@ int main(){
     while(u<num){
         printf("%d ", myarr[u]);
         u++;
+    
+
     }
+    }else{
+        printf("Invalid operator");
+    }
+
+    
 
     return 0;
 }

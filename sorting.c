@@ -141,6 +141,7 @@ int main(){
     //checking if options are valid
     if(option==1||option==2||option==3||option==4||option==5){
 
+    // sorts according to the users choice
     switch(option){
 
         case 1:

@@ -21,18 +21,22 @@ int main(){
     float new;
     
     switch(num){
+        //For addition
         case 1:
         new = x+y;
         break;
 
+        //For subtraction
         case 2:
         new = x-y;
         break;
 
+        //For multiplication
         case 3:
         new = x*y;
         break;
 
+        //For division
         case 4:
         new = x/y;
         break;
